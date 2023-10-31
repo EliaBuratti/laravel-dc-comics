@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminComicController;
 use App\Http\Controllers\Guest\UserComicController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [UserComicController::class, 'index'])->name('welcome');
+
+Route::get('admin', function () {
+
+    return view('admin');
+})->name('admin');
+
+Route::post('admin', [AdminComicController::class, 'create'])->name('admin.create');

@@ -19,9 +19,21 @@ class AdminComicController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $comic = $request->all();
+
+        dd($comic);
+        Comic::create([
+            'title' => $comic('title'),
+            'description' => $comic('description'),
+            'thumb' => $comic('thumb'),
+            'price' => $comic('price'),
+            'sale_date' => $comic('sale_date'),
+            'type' => $comic('type'),
+            'artists' => $comic('artists'),
+            'writers' => $comic('writers'),
+        ]);
     }
 
     /**
@@ -29,7 +41,6 @@ class AdminComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
