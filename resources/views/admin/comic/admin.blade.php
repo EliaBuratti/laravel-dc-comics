@@ -23,7 +23,7 @@
                     </ul>
 
                     <button class="btn btn-success">
-                        <a class="nav-link" href="{{ route('welcome') }}">Home</a>
+                        <a class="nav-link" href="{{ route('home') }}">Home</a>
                     </button>
                 </div>
             </div>
@@ -85,6 +85,38 @@
 
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>
+
+
+            <div class="comic-list mt-5">
+                <h3>List comics</h3>
+                <table class="table my-4 border">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($comics as $comic)
+                            <tr>
+                                <th scope="row">{{ $comic->id }}</th>
+                                <td>
+                                    <img width="150" src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+                                </td>
+                                <td>{{ $comic->title }}</td>
+                                <td>
+                                    <a href="{{ route('comic.show', $comic->id) }}" class="btn btn-primary">View</a>
+
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+
+
         </div>
     </main>
 @endsection

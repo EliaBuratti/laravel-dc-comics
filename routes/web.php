@@ -15,11 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [UserComicController::class, 'index'])->name('welcome');
+Route::get('/', [UserComicController::class, 'index'])->name('home');
 
-Route::get('admin', function () {
+Route::get('/admin', [AdminComicController::class, 'index'])->name('admin');
 
-    return view('admin');
-})->name('admin');
+Route::post('/admin', [AdminComicController::class, 'create'])->name('admin.create');
 
-Route::post('admin', [AdminComicController::class, 'create'])->name('admin.create');
+//Route::get('/admin/{admin}')
+//Route::get('admin/comic/{comic}', [AdminComicController::class, 'show'])->name('admin.comic.show');
+
+Route::resource('admin/comic', AdminComicController::class);

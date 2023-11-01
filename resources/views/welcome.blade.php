@@ -55,7 +55,7 @@
         <div class="row row-cols-md-2">
             @foreach ($comics as $comic)
                 <div class="col my-4">
-                    <div class="card p-4">
+                    <div class="card h-100 p-4">
                         <img style="aspect-ratio: 1 / 1.5" src="{{ $comic->thumb }}" class="card-img-top"
                             alt="...">
                         <div class="card-body">

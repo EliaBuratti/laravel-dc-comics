@@ -14,6 +14,8 @@ class AdminComicController extends Controller
     public function index()
     {
         //
+        $comics = Comic::all();
+        return view('admin.comic.admin', compact('comics'));
     }
 
     /**
@@ -36,7 +38,7 @@ class AdminComicController extends Controller
         //save instruction
         $new_comic->save();
 
-        return view('admin');
+        return view('admin.admin');
     }
 
     /**
@@ -49,9 +51,10 @@ class AdminComicController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Comic $comic)
     {
-        //
+        //dd($comic);
+        return view('admin.comic.show', compact('comic'));
     }
 
     /**
