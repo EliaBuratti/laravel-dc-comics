@@ -21,19 +21,22 @@ class AdminComicController extends Controller
      */
     public function create(Request $request)
     {
-        $comic = $request->all();
 
-        dd($comic);
-        Comic::create([
-            'title' => $comic('title'),
-            'description' => $comic('description'),
-            'thumb' => $comic('thumb'),
-            'price' => $comic('price'),
-            'sale_date' => $comic('sale_date'),
-            'type' => $comic('type'),
-            'artists' => $comic('artists'),
-            'writers' => $comic('writers'),
-        ]);
+
+        $new_comic = new Comic();
+
+        $new_comic->title = $request['title'];
+        $new_comic->description = $request['description'];
+        $new_comic->thumb = $request['thumb'];
+        $new_comic->price = $request['price'];
+        $new_comic->sale_date = $request['sale_date'];
+        $new_comic->type = $request['type'];
+        $new_comic->artists =  $request['artists'];
+        $new_comic->writers =  $request['writers'];
+        //save instruction
+        $new_comic->save();
+
+        return view('admin');
     }
 
     /**

@@ -37,8 +37,8 @@
             <form action="{{ route('admin.create') }}" method="POST">
                 @csrf
                 <div class="mb-3">
-                    <label for="film" class="form-label">Comic Title:</label>
-                    <input type="text" class="form-control" name="film" id="film"
+                    <label for="title" class="form-label">Comic Title:</label>
+                    <input type="text" class="form-control" name="title" id="title"
                         placeholder="Write comic title">
                 </div>
 
