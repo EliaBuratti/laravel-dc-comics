@@ -24,22 +24,7 @@ class AdminComicController extends Controller
      */
     public function create(Request $request)
     {
-        $img_path = Storage::put('comic_images', $request->thumb);
-
-        $new_comic = new Comic();
-
-        $new_comic->title = $request['title'];
-        $new_comic->description = $request['description'];
-        $new_comic->thumb = $img_path;
-        $new_comic->price = $request['price'];
-        $new_comic->sale_date = $request['sale_date'];
-        $new_comic->type = $request['type'];
-        $new_comic->artists =  $request['artists'];
-        $new_comic->writers =  $request['writers'];
-        //save instruction
-        $new_comic->save();
-
-        return to_route('admin');
+        return view('admin.comic.create');
     }
 
     /**
@@ -47,6 +32,14 @@ class AdminComicController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->all();
+        $img_path = Storage::put('comic_images', $request->thumb);
+        $data['thumb'] = $img_path;
+
+
+        $new_comic = Comic::create($data);
+
+        return to_route('admin');
     }
 
     /**
@@ -61,17 +54,26 @@ class AdminComicController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Comic $comic)
     {
-        //
+        return view('admin.comic.edit', compact('comic'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $data = $request->all();
+        if ($request->has('thumb') && $comic->thumb) {
+            Storage::delete($comic->thumb);
+
+            $img_path = Storage::put('comic_images', $request->thumb);
+            $data['thumb'] = $img_path;
+        }
+        //dd($data);
+        $comic->update($data);
+        return to_route('admin');
     }
 
     /**

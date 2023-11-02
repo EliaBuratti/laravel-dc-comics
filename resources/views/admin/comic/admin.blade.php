@@ -34,61 +34,11 @@
     <main>
         <div class="container mt-4">
 
-            <form action="{{ route('admin.create') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="mb-3">
-                    <label for="title" class="form-label">Comic Title:</label>
-                    <input type="text" class="form-control" name="title" id="title"
-                        placeholder="Write comic title">
-                </div>
-
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description:</label>
-                    <input type="text" class="form-control" name="description" id="description"
-                        placeholder="Description of comic">
-                </div>
-
-                <div class="mb-3">
-                    <label for="thumb" class="form-label">Thumb:</label>
-                    <input type="file" class="form-control" name="thumb" id="thumb" placeholder="cover image">
-                </div>
-
-                <div class="mb-3">
-                    <label for="price" class="form-label">Price:</label>
-                    <input type="text" class="form-control" name="price" id="price"
-                        placeholder="Price of comic book">
-                </div>
-
-                <div class="mb-3">
-                    <label for="artists" class="form-label">Artists:</label>
-                    <input type="text" class="form-control" name="artists" id="artists"
-                        placeholder="artists of comic book">
-                </div>
-
-                <div class="mb-3">
-                    <label for="writers" class="form-label">Writers:</label>
-                    <input type="text" class="form-control" name="writers" id="writers"
-                        placeholder="writers of comic book">
-                </div>
-
-                <div class="mb-3">
-                    <label for="sale date" class="form-label">Sale date:</label>
-                    <input type="text" class="form-control" name="sale date" id="sale date"
-                        placeholder="sale date of comic book">
-                </div>
-
-                <div class="mb-3">
-                    <label for="type" class="form-label">Type:</label>
-                    <input type="text" class="form-control" name="type" id="type"
-                        placeholder="type of comic book">
-                </div>
-
-                <button type="submit" class="btn btn-primary">Create</button>
-            </form>
-
-
             <div class="comic-list mt-5">
                 <h3>List comics</h3>
+                <button class="btn btn-primary">
+                    <a class="nav-link" href="{{ route('comic.create') }}">Add comic</a>
+                </button>
                 <table class="table my-4 border">
                     <thead>
                         <tr>
@@ -115,7 +65,7 @@
                                 <td>{{ $comic->title }}</td>
                                 <td>
                                     <a href="{{ route('comic.show', $comic->id) }}" class="btn btn-primary">View</a>
-
+                                    <a href="{{ route('comic.edit', $comic->id) }}" class="btn btn-secondary">Edit</a>
                                 </td>
                             </tr>
                         @endforeach
