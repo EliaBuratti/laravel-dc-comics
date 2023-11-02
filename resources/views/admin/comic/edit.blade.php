@@ -55,8 +55,8 @@
                     <img width="150" src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
 
 
-                    <img width="150" src="{{ asset('storage/' . $comic->thumb) }}"
-                        alt="{{ $comic->title }}">{{-- per immagini caricate da locale --}}
+                    {{-- <img width="150" src="{{ asset('storage/' . $comic->thumb) }}"
+                        alt="{{ $comic->title }}"> per immagini caricate da locale --}}
 
                     {{-- le lascio entrambe per vederle --}}
                     <input type="file" class="form-control mt-2" name="thumb" id="thumb" placeholder="cover image">

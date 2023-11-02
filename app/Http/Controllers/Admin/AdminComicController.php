@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Comic;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+
+use function PHPUnit\Framework\throwException;
 
 class AdminComicController extends Controller
 {
@@ -33,9 +36,11 @@ class AdminComicController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $img_path = Storage::put('comic_images', $request->thumb);
-        $data['thumb'] = $img_path;
 
+        if ($request->has('thumb')) {
+            $img_path = Storage::put('comic_images', $request->thumb);
+            $data['thumb'] = $img_path;
+        } //non sarebbe necessario in quanto ho messo obbligatorio il campo
 
         $new_comic = Comic::create($data);
 

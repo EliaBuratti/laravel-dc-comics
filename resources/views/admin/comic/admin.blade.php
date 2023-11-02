@@ -57,10 +57,8 @@
                                     <img width="150" src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
 
 
-                                    <img width="150" src="{{ asset('storage/' . $comic->thumb) }}"
-                                        alt="{{ $comic->title }}">{{-- per immagini caricate da locale --}}
-
-                                    {{-- le lascio entrambe per vederle --}}
+                                    {{-- <img width="150" src="{{ $comic->thumb }}" alt="{{ $comic->title }}"> --}}
+                                    {{-- per immagini caricate da locale le lascio entrambe per vederle --}}
                                 </td>
                                 <td>{{ $comic->title }}</td>
                                 <td>
