@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
+use function PHPUnit\Framework\isNull;
 use function PHPUnit\Framework\throwException;
 
 class AdminComicController extends Controller
@@ -84,8 +85,16 @@ class AdminComicController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Comic $comic)
     {
-        //
+        //dd($comic);
+
+        if (!isNull($comic->thumb)) {
+            Storage::delete($comic->thumb);
+        }
+
+        $comic->delete();
+
+        return to_route('admin')->with('message', 'Delete sucessully');
     }
 }
