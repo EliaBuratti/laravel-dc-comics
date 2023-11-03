@@ -34,6 +34,16 @@
     <main>
         <div class="container mt-4">
 
+
+            @if (session('message'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <strong>Success!</strong> {{ session('message') }}
+                </div>
+            @endif
+
+
+
             <div class="comic-list mt-5">
                 <h3>List comics</h3>
                 <button class="btn btn-primary">

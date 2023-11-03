@@ -45,7 +45,7 @@ class AdminComicController extends Controller
 
         $new_comic = Comic::create($data);
 
-        return to_route('admin');
+        return to_route('admin')->with('message', 'Created sucessfully');
     }
 
     /**
@@ -79,7 +79,7 @@ class AdminComicController extends Controller
         }
         //dd($data);
         $comic->update($data);
-        return to_route('admin');
+        return to_route('admin')->with('message', 'Updated sucessfully');
     }
 
     /**
@@ -95,6 +95,6 @@ class AdminComicController extends Controller
 
         $comic->delete();
 
-        return to_route('admin')->with('message', 'Delete sucessully');
+        return to_route('admin')->with('message', 'Delete sucessfully');
     }
 }
