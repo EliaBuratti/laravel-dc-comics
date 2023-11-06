@@ -49,6 +49,10 @@
                 <button class="btn btn-primary">
                     <a class="nav-link" href="{{ route('comic.create') }}">Add comic</a>
                 </button>
+
+                <button class="btn btn-warning">
+                    <a class="nav-link" href="{{ route('trash.index') }}">Trash bin</a>
+                </button>
                 <table class="table my-4 border">
                     <thead>
                         <tr>
@@ -77,7 +81,7 @@
 
 
                                     <!-- Modal trigger button -->
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal"
                                         data-bs-target="#modalId-{{ $comic->id }}">
                                         Delete
                                     </button>
@@ -97,7 +101,7 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    Warning! Are you sure to want delete this comic?
+                                                    Warning! Are you sure to move on trash bin this comic?
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
@@ -105,7 +109,7 @@
                                                     <form action="{{ route('comic.destroy', $comic->id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger">Yes!</button>
+                                                        <button type="submit" class="btn btn-warning">Yes!</button>
                                                     </form>
                                                 </div>
                                             </div>

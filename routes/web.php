@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminComicController;
 use App\Http\Controllers\Guest\UserComicController;
+use App\Http\Controllers\trahController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,5 @@ Route::post('/admin', [AdminComicController::class, 'create'])->name('admin.crea
 //Route::get('admin/comic/{comic}', [AdminComicController::class, 'show'])->name('admin.comic.show');
 
 Route::resource('admin/comic', AdminComicController::class);
+
+Route::resource('admin/trash', trahController::class);

@@ -99,4 +99,10 @@ class AdminComicController extends Controller
 
         return to_route('admin')->with('message', 'Delete sucessfully');
     }
+
+
+    public function trash()
+    {
+        dd('sono nel trash view');
+    }
 }

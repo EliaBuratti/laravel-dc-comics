@@ -24,7 +24,7 @@ class StorePostRequest extends FormRequest
         return [
             'title' => 'required|min:3|max:100',
             'description' => 'required|min:3|max:5000',
-            'thumb' => 'nullable|image',
+            'thumb' => 'nullable|image|max:600',
             'price' => 'required|max:25',
             'sale_date' => 'required|date',
             'type' => 'required|min:3|max:50',
@@ -32,13 +32,6 @@ class StorePostRequest extends FormRequest
             'writers' => 'required|min:3|max:500',
 
         ];
-        /* [
-            'title' =>[
-                'required' => 'Scrivi il titolo del fumetto',
-                'min' => 'scrivi almeno 3 lettere',
-                'max' => 'Limite massimo 100 caratteri',
-            ]
-        ]; */
     }
 
     public function messages()

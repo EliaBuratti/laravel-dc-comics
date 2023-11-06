@@ -52,7 +52,7 @@
                     @error('title')
                         <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            <strong>Warning!</strong> {{ $message }}
+                            <strong>Attenzione!</strong> {{ $message }}
                         </div>
                     @enderror
                 </div>
@@ -64,7 +64,7 @@
                     @error('description')
                         <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            <strong>Warning!</strong> {{ $message }}
+                            <strong>Attenzione!</strong> {{ $message }}
                         </div>
                     @enderror
                 </div>
@@ -75,7 +75,7 @@
                     @error('thumb')
                         <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            <strong>Warning!</strong> {{ $message }}
+                            <strong>Attenzione!</strong> {{ $message }}
                         </div>
                     @enderror
                 </div>
@@ -87,7 +87,7 @@
                     @error('price')
                         <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            <strong>Warning!</strong> {{ $message }}
+                            <strong>Attenzione!</strong> {{ $message }}
                         </div>
                     @enderror
                 </div>
@@ -99,7 +99,7 @@
                     @error('artists')
                         <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            <strong>Warning!</strong> {{ $message }}
+                            <strong>Attenzione!</strong> {{ $message }}
                         </div>
                     @enderror
                 </div>
@@ -111,7 +111,7 @@
                     @error('writers')
                         <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            <strong>Warning!</strong> {{ $message }}
+                            <strong>Attenzione!</strong> {{ $message }}
                         </div>
                     @enderror
                 </div>
@@ -123,7 +123,7 @@
                     @error('sale_date')
                         <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            <strong>Warning!</strong> {{ $message }}
+                            <strong>Attenzione!</strong> {{ $message }}
                         </div>
                     @enderror
                 </div>
@@ -135,7 +135,7 @@
                     @error('type')
                         <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            <strong>Warning!</strong> {{ $message }}
+                            <strong>Attenzione!</strong> {{ $message }}
                         </div>
                     @enderror
                 </div>
